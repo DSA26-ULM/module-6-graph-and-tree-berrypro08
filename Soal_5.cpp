@@ -3,8 +3,7 @@
 #include "RedBlackTree.h"
 
 using namespace std;
-
-// Fungsi sederhana untuk mencetak urutan Preorder (Akar, Kiri, Kanan) 
+ 
 void cetakPreorder(const RedBlackTree::Node* node, bool &first) {
     if (node->isNil) return;
 
@@ -16,7 +15,6 @@ void cetakPreorder(const RedBlackTree::Node* node, bool &first) {
     cetakPreorder(node->right, first);
 }
 
-// Fungsi sederhana untuk mencetak urutan Inorder (Kiri, Akar, Kanan)
 void cetakInorder(const RedBlackTree::Node* node, bool &first) {
     if (node->isNil) return;
 
@@ -29,7 +27,6 @@ void cetakInorder(const RedBlackTree::Node* node, bool &first) {
     cetakInorder(node->right, first);
 }
 
-// Fungsi sederhana untuk mencetak urutan Postorder (Kiri, Kanan, Akar)
 void cetakPostorder(const RedBlackTree::Node* node, bool &first) {
     if (node->isNil) return;
 
@@ -42,26 +39,17 @@ void cetakPostorder(const RedBlackTree::Node* node, bool &first) {
 }
 
 int main() {
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
-
     RedBlackTree rbt;
     int N;
-
-    // 1. Ambil berapa banyak angka yang akan dimasukkan
     if (!(cin >> N)) return 0;
-
-    // 2. Masukkan angka satu per satu
     for (int i = 0; i < N; i++) {
         int angka;
         cin >> angka;
-        // Sesuai aturan: jika angka sudah ada, jangan masukkan lagi (abaikan duplikat)
         if (!rbt.contains(angka)) {
             rbt.insert(angka);
         }
     }
 
-    // 3. Baca jumlah query
     int Q;
     cin >> Q;
     for (int i = 0; i < Q; i++) {
