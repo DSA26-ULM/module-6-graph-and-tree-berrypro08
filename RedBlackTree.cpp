@@ -1,4 +1,5 @@
 #include "RedBlackTree.h"
+#include <cstddef>
 
 RedBlackTree::Node::Node(int value, Color nodeColor, bool sentinel)
     : key(value),
