@@ -8,7 +8,6 @@ struct Node {
 
 int main() {
     int R, C;
-    // Tambahkan pengecekan agar ukuran grid valid
     if (!(cin >> R >> C) || R <= 0 || C <= 0) return 0;
 
     vector<vector<int>> grid(R, vector<int>(C));
